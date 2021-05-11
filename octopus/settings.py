@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'core',
+    'graphene_django',
+    #
 ]
 
 MIDDLEWARE = [
@@ -71,6 +75,21 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'octopus.wsgi.application'
+
+#graph QL
+GRAPHENE = {
+    'SCHEMA': 'core.schema.schema' # Where your Graphene schema lives
+}
+
+#rest framework
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        #'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.AllowAny',
+    ]
+}
 
 
 # Database
